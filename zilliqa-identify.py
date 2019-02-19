@@ -32,6 +32,7 @@ MALFUNCTIONING_NODE_PATTERNS = [
 
 NORMAL_NODE_PATTERNS = [
         "DS State = POW_SUBMISSION",
+        "Node State = SYNC",
         "No Directory blocks sent/ I have the latest blocks",
         "The lowBlockNum is higher the highblocknum, maybe DS epoch ongoing"
         "Set sync type to 2",
@@ -39,6 +40,8 @@ NORMAL_NODE_PATTERNS = [
 
 
 def determine_type(line):
+    # Normal nodes get priority to be identfied because some of the identifiers overlap with
+    # DS/Shard.
     node_types = (("normal", NORMAL_NODE_PATTERNS),
                   ("malfunctioning", MALFUNCTIONING_NODE_PATTERNS),
                   ("ds", DS_NODE_PATTERNS),
