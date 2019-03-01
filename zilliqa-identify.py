@@ -28,6 +28,7 @@ DS_NODE_PATTERNS = [
 MALFUNCTIONING_NODE_PATTERNS = [
         "The latest DS index does not match that of the latest tx block ds num, try fetching Tx and Dir Blocks again",
         "Even after the recving latest ds info, the information is stale",
+        "Cannot rejoin currently",
         ]
 
 NORMAL_NODE_PATTERNS = [
